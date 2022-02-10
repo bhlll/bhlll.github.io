@@ -1,6 +1,6 @@
 ---
 title: 29岁生日快乐！
-tags: 伯远
+tags: boyuan
 article_header:
   type: cover
   image:
