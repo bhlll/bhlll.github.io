@@ -19,16 +19,9 @@
       <script>
         function screeshot() {
           html2canvas(document.body).then(canvas => {
-            canvas.toBlob(function(blob) {
-              const fileName = "result";
-              const link = document.createElement("a");
-              link.download = fileName + ".png";
-              canvas.toBlob(function (blob) {
-                  console.log(blob);
-                  link.href = URL.createObjectURL(blob);
-                  link.click();
-              });
-            });
+            const image = document.createElement('img');
+            image.src = canvas.toDataURL("image/png");
+            document.body.appendChild(image);
           });
         }
       </script>
