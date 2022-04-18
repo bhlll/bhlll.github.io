@@ -20,7 +20,14 @@
         function screeshot() {
           html2canvas(document.body).then(canvas => {
             canvas.toBlob(function(blob) {
-              window.saveAs(blob, 'my_image.jpg');
+              const fileName = "result";
+              const link = document.createElement("a");
+              link.download = fileName + ".png";
+              canvas.toBlob(function (blob) {
+                  console.log(blob);
+                  link.href = URL.createObjectURL(blob);
+                  link.click();
+              });
             });
           });
         }
