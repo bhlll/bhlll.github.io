@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>MBYI-211 测试</h1>
+        <div class="quiz-container">
+          <div id="quiz"></div>
+        </div>
+        <button id="previous">上一个问题</button>
+        <button id="next">下一个问题</button>
+        <button id="submit">提交答案</button>
+        <div id="results"></div> 
+        <button id="screenshot" onclick="screeshot()">截屏</button>
+      <script src="./data.js"></script>
+      <script src="./main.js"></script>
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+      <script>
+        function screeshot() {
+          html2canvas(document.body).then(canvas => {
+            const image = document.createElement('img');
+            image.src = canvas.toDataURL("image/png");
+            document.body.appendChild(image);
+          });
+        }
+      </script>
+    </body>
+</html>
