@@ -96,9 +96,8 @@
           img.height = 600;
           document.body.appendChild(img);
 
-          document.getElementsByClassName("page").forEach(element => {
-            element.style.display = "none";
-          });
+          let element = document.getElementsByClassName('page');
+          element[0].style.display = 'none';
         });
     }
   </script>
