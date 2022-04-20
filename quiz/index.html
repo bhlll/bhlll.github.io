@@ -90,8 +90,10 @@
     function screenshot() {
       htmlToImage.toPng(document.getElementById('results'))
         .then(function (dataUrl) {
-          var img = new Image();
+          const img = document.createElement('img');
           img.src = dataUrl;
+          img.width = 300;
+          img.height = 600;
           document.body.appendChild(img);
         });
     }

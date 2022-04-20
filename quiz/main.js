@@ -167,7 +167,7 @@ const showResults = () => {
   result.push(
     ` 
      <div class = 'finalAnser' style="width: 100%; height:100%"> ${finalAnswer}
-     <image src ='./img/poster/${finalAnswer}.jpg' style="width: 100%; height:100%">
+     <image src ='./img/poster/${finalAnswer}.jpg' style="width: 100%; height:100%" crossorigin="anonymous">
       </div>
 `
   );
