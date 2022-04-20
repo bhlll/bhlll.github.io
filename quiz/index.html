@@ -92,9 +92,9 @@
         .then(function (dataUrl) {
           const img = document.createElement('img');
           img.src = dataUrl;
-          img.width = 300;
-          img.height = 600;
-          document.body.appendChild(img);
+          img.width = "100%";
+          img.height = "100%";
+          document.getElementById('results').appendChild(img);
         });
     }
   </script>
