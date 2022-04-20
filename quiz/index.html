@@ -92,10 +92,13 @@
         .then(function (dataUrl) {
           const img = document.createElement('img');
           img.src = dataUrl;
-          img.width = "100%";
-          img.height = "100%";
-          img.style.zIndex = 9999;
+          img.width = 300;
+          img.height = 600;
           document.body.appendChild(img);
+
+          document.getElementsByClassName("page").array.forEach(element => {
+            element.style.display = "none";
+          });
         });
     }
   </script>
