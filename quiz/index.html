@@ -87,10 +87,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
   <script>
     function screenshot() {
-      html2canvas(document.getElementById('results'), {useCORS: true, allowTaint: true, foreignObjectRendering: true}).then(canvas => {
+      html2canvas(document.getElementById('results'), {height: 3000, width: 3000, useCORS: true}).then(canvas => {
         const image = document.createElement('img');
         //const image = new Image()
-        image.crossOrigin = "anonymous";
+        image.crossOrigin = "Anonymous";
         image.src = canvas.toDataURL("image/png");
         document.body.appendChild(image);
       });
