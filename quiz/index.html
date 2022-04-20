@@ -88,16 +88,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.9.0/html-to-image.js"></script>
   <script>
     function screenshot() {
-      htmlToImage.toPng(document.body)
+      htmlToImage.toJpeg(document.body, { quality: 0.8 })
         .then(function (dataUrl) {
           const img = document.createElement('img');
           img.src = dataUrl;
           img.width = 300;
           img.height = 600;
           document.body.appendChild(img);
-
-          let element = document.getElementsByClassName('page');
-          element[0].style.display = 'none';
         });
     }
   </script>
