@@ -85,15 +85,15 @@
   <script src="./main.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.9.0/html-to-image.js"></script>
   <script>
     function screenshot() {
-      html2canvas(document.getElementById('results'), {height: 300, width: 600, useCORS: true}).then(canvas => {
-        const image = document.createElement('img');
-        //const image = new Image()
-        image.crossOrigin = "Anonymous";
-        image.src = canvas.toDataURL("image/png");
-        document.body.prepend(image);
-      });
+      htmlToImage.toPng(document.getElementById('results'))
+        .then(function (dataUrl) {
+          var img = new Image();
+          img.src = dataUrl;
+          document.body.appendChild(img);
+        });
     }
   </script>
 </body>
