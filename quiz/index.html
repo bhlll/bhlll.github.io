@@ -83,11 +83,16 @@
     let captionText = document.getElementById("caption");
 
     function screenshot() {
-      htmlToImage.toPng(document.getElementById("results"))
+      htmlToImage.toJpeg(document.getElementById("results"), { quality: 0.95 } )
         .then(function (dataUrl) {
           modal.style.display = "block";
           modalImg.src = dataUrl;
           captionText.innerHTML = dataUrl;
+
+          var link = document.createElement('a');
+          link.download = 'my-image-name.jpeg';
+          link.href = dataUrl;
+          link.click();
       });
     }
     // Get the <span> element that closes the modal
