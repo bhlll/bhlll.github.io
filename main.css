@@ -143,6 +143,7 @@ button:hover {
   position: absolute;
   width: 80vw;
   top: 150vw;
+  display: none;
 }
 .page .buttons button {
   height: 10vw;
