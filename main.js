@@ -62,7 +62,7 @@ const showPoster = () => {
       context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
       context.font = "50px Verdana";
       context.fillStyle = 'white';
-      context.fillText(username, window.innerWidth * 0.1,  window.innerHeight * 0.55);
+      context.fillText(username, window.innerWidth * 0.11,  window.innerHeight * 0.55);
 
       var canvas = document.getElementById('result-canvas');
       var dataURL = canvas.toDataURL();
