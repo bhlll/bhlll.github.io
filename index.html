@@ -67,19 +67,6 @@
   <canvas id="result-canvas" style='display: none;'></canvas>
   <script src="./data.js"></script>
   <script src="./main.js"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
-  <script>
-    function screenshot() {
-      html2canvas(document.body).then(canvas => {
-        // const image = document.createElement('img');
-        const image = new Image()
-        image.crossorigin = "anonymous";
-        image.src = canvas.toDataURL("image/png");
-        document.body.appendChild(image);
-      });
-    }
-  </script>
 </body>
 
 </html>
