@@ -1,6 +1,9 @@
 // import "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
 // import "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js";
 let result;
+let bgImg = "";
+let quizResult = "";
+
 const buildQuiz = () => {
   // variable to store the HTML output
   const output = [];
@@ -47,11 +50,25 @@ const showNextPage = () => {
 }
 
 const showPoster = () => {
+  const username = document.getElementById("username").value;
   showNextPage();
-  const username = document.getElementById("username");
-  console.log(username)
-  console.log(document.getElementsByClassName("username"))
 
+  const canvas = document.querySelector("canvas");
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const context = canvas.getContext("2d");
+    const imageObj = new Image();
+    imageObj.onload = () => {
+      context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
+      context.font = "50px Verdana";
+      context.fillStyle = 'white';
+      context.fillText(username, window.innerWidth * 0.1,  window.innerHeight * 0.55);
+
+      var canvas = document.getElementById('result-canvas');
+      var dataURL = canvas.toDataURL();
+      document.getElementById('result-image').src = dataURL;
+    };
+  imageObj.src = "img/poster/" + quizResult + ".jpg";
 }
 
 const startAction = () => {
@@ -168,18 +185,18 @@ const showResults = () => {
   });
 
 
-  let finalAnswer = calcuateResult(answers)
-  const result = [];
+  quizResult = calcuateResult(answers)
+  // const result = [];
 
-  result.push(
-    ` 
-     <div class = 'finalAnser' style="width: 100%; height:100%">
-     <image id="result-image" src ='img/poster/${finalAnswer}.jpg' style="width: 100%; height:100%">
-      </div>
-`
-  );
+  bgImg = 'url(img/poster/'+quizResult+'.jpg)'
+// result.push(
+//     ` 
+//      <div class = 'finalAnser' style="width: 100%; height:100%" style = "background-image:${bgImg}">
+//       </div>
+// `
+//   );
 
-  resultsContainer.innerHTML = result.join('');
+//   resultsContainer.innerHTML = result.join('');
 
 }
 
