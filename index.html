@@ -67,33 +67,30 @@
       </div> -->
     </div>
   </div>
-  <!-- Result Image Modal -->
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-  </div>
+  <canvas id="result-canvas" style='display: none;'></canvas>
   <script src="./data.js"></script>
   <script src="./main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.9.0/html-to-image.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
-    let modal = document.getElementById("myModal");
-    let modalImg = document.getElementById("img01");
-    let captionText = document.getElementById("caption");
-
     function screenshot() {
-      htmlToImage.toPng(document.getElementById("results"))
-        .then(function (dataUrl) {
-          modal.style.display = "block";
-          modalImg.src = dataUrl;
-      });
-    }
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
+      const canvas = document.querySelector("canvas");
+      const resultImage = document.getElementById('result-image');
+      const username = document.getElementById("username").value;
+
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const context = canvas.getContext("2d");
+      const imageObj = new Image();
+      imageObj.onload = () => {
+        context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
+        context.font = "40pt Calibri";
+        context.fillStyle = 'white';
+        context.fillText(username, 150,  window.innerHeight * 0.55);
+
+        var canvas = document.getElementById('result-canvas');
+        var dataURL = canvas.toDataURL();
+        resultImage.src = dataURL;
+      };
+      imageObj.src = resultImage.src;
     }
   </script>
 </body>

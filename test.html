@@ -10,7 +10,7 @@
     <div id="results">
       <h1>测试用户</h1>
       <img id="result-image" src="./img/poster/A.jpg" width="100%" height="100%"/>
-      <canvas id="idCanvas" style='width: 200px; height: 300px; display: none;'></canvas>
+      <canvas id="result-canvas" style='display: none;'></canvas>
     </div>
     <button id="open-popup" style="font-size: 24px;" onclick="screenshot()">截屏</button>
   </div>
@@ -38,6 +38,7 @@
 
     function screenshot() {
       const canvas = document.querySelector("canvas");
+      const resultImage = document.getElementById('result-image');
       canvas.width  = window.innerWidth;
       canvas.height = window.innerHeight;
       const context = canvas.getContext("2d");
@@ -47,10 +48,11 @@
         context.font = "40pt Calibri";
         context.fillText("hello!", 20, 20);
 
-        var canvas = document.getElementById('idCanvas');
+        var canvas = document.getElementById('result-canvas');
         var dataURL = canvas.toDataURL();
-        modal.style.display = "block";
-        modalImg.src = dataURL;
+        resultImage.src = dataURL;
+        // modal.style.display = "block";
+        // modalImg.src = dataURL;
       };
       imageObj.src = "./img/poster/A.jpg";
     }
