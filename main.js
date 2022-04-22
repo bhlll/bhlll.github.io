@@ -61,9 +61,9 @@ const showPoster = () => {
   imageObj.onload = () => {
     context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerWidth * 1.77);
 
-    context.font = "50px ZCOOL XiaoWei";
+    context.font = "50px serif";
     context.fillStyle = 'white';
-    context.fillText(username, window.innerWidth * 0.11,  window.innerWidth * 0.97);
+    context.fillText(username, window.innerWidth * 0.12,  window.innerWidth * 0.98);
 
     var canvas = document.getElementById('result-canvas');
     var dataURL = canvas.toDataURL();

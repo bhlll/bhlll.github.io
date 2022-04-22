@@ -11,7 +11,6 @@
     <div id="results">
       <h1>测试用户</h1>
       <img id="result-image" src="./img/poster/A.jpg" width="100%" height="100%"/>
-      <div id="preloadfont">.</div>
       <canvas id="result-canvas" style='display: none;'></canvas>
     </div>
     <button id="open-popup" style="font-size: 40px; font-family: 'ZCOOL XiaoWei';" onclick="screenshot()">截屏</button>
@@ -47,8 +46,8 @@
       const imageObj = new Image();
       imageObj.onload = () => {
         context.drawImage(imageObj, 0, 0);
-        context.font = "100px ZCOOL XiaoWei";
-        context.fillText("hello 2022!", 20, 120);
+        context.font = '100px serif';
+        context.fillText("测试", 20, 120);
 
         var canvas = document.getElementById('result-canvas');
         var dataURL = canvas.toDataURL();
