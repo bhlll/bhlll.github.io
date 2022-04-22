@@ -55,7 +55,7 @@ const showPoster = () => {
 
   const canvas = document.querySelector("canvas");
   canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerWidth * 1.77;
   const context = canvas.getContext("2d");
   const imageObj = new Image();
   imageObj.onload = () => {
