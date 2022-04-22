@@ -20,7 +20,7 @@ const buildQuiz = () => {
       answers.push(
         `<label>
             <input id = "question${questionNumber}" type="radio" name="question${questionNumber}" value=${index}>
-            ${answer} 
+          
           </label>`
       );
     })
@@ -28,7 +28,7 @@ const buildQuiz = () => {
     // add this question and its answers to the output
     output.push(
       `<div class="slide">
-          <div class="answers" style = 'background-color:green; opacity: 0.5'> ${answers.join("")} </div>
+          <div class="answers"> ${answers.join("")} </div>
         </div>`
     );
   }
@@ -52,7 +52,7 @@ const showNextPage = () => {
 const showPoster = () => {
   const username = document.getElementById("username").value;
   showNextPage();
-
+  
   const canvas = document.querySelector("canvas");
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
