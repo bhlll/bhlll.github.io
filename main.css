@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+@import url(https://fonts.googleapis.com/css2?family=Akshar:wght@300;600&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap);
+
 body {
   font-size: 3.5vw;
   font-family: "Work Sans", sans-serif;
@@ -176,6 +178,14 @@ input#username {
   font-size: 5vw;
   margin: 110vw auto 2vw auto;
   width: 55vw;
+}
+
+#preloadfont {
+  font-family: 'ZCOOL KuaiLe';
+  opacity:0;
+  height:0;
+  width:0;
+  display:inline-block;
 }
 
 /*# sourceMappingURL=main.css.map */

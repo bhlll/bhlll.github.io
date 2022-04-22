@@ -60,7 +60,7 @@ const showPoster = () => {
     const imageObj = new Image();
     imageObj.onload = () => {
       context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerWidth * 1.77);
-      context.font = "50px Verdana";
+      context.font = "50px ZCOOL KuaiLe";
       context.fillStyle = 'white';
       context.fillText(username, window.innerWidth * 0.11,  window.innerWidth * 0.97);
 
