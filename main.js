@@ -57,17 +57,18 @@ const showPoster = () => {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
   const context = canvas.getContext("2d");
-    const imageObj = new Image();
-    imageObj.onload = () => {
-      context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerWidth * 1.77);
-      context.font = "50px ZCOOL KuaiLe";
-      context.fillStyle = 'white';
-      context.fillText(username, window.innerWidth * 0.11,  window.innerWidth * 0.97);
+  const imageObj = new Image();
+  imageObj.onload = () => {
+    context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerWidth * 1.77);
 
-      var canvas = document.getElementById('result-canvas');
-      var dataURL = canvas.toDataURL();
-      document.getElementById('result-image').src = dataURL;
-    };
+    context.font = "50px ZCOOL XiaoWei";
+    context.fillStyle = 'white';
+    context.fillText(username, window.innerWidth * 0.11,  window.innerWidth * 0.97);
+
+    var canvas = document.getElementById('result-canvas');
+    var dataURL = canvas.toDataURL();
+    document.getElementById('result-image').src = dataURL;
+  };
   imageObj.src = "img/poster/" + quizResult + ".jpg";
 }
 

@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 @import url(https://fonts.googleapis.com/css2?family=Akshar:wght@300;600&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
 
 body {
   font-size: 3.5vw;
@@ -181,7 +182,7 @@ input#username {
 }
 
 #preloadfont {
-  font-family: 'ZCOOL KuaiLe';
+  font-family: 'ZCOOL XiaoWei', serif;
   opacity:0;
   height:0;
   width:0;
