@@ -11,9 +11,9 @@ body {
 
   button {
     font-size: 2.5vw;
-    background-color: yellowgreen;
+    background-color: transparent;
     // border-radius: 20vw;
-    border: green 2vw solid;
+    border: transparent 2vw solid;
     // margin:auto;
   }
 }
@@ -55,7 +55,7 @@ body {
 
 .answers label {
   display: flex;
-  border: blue solid 1px;
+  border: transparent solid 1px;
   // margin: 10% 0%;
   height: 10vw;
   margin-bottom: 4.5vw;
@@ -81,6 +81,7 @@ button {
 
 button:hover {
   background-color: #38a;
+  opacity: 0.2;
 }
 
 .slide {
@@ -148,7 +149,8 @@ button:hover {
     background-repeat: no-repeat;
     background-size: cover;
 
-    .result-image {
+    
+    #result-image {
       width: 100%;
       height: 100%;
     }
@@ -191,6 +193,7 @@ button:hover {
 
     &#saveButtons{
       position: absolute;
+      justify-content: center;
       width: 80vw;
       top: 150vw;
     }
@@ -237,9 +240,9 @@ button:hover {
     // opacity: 0.5;
 
     input[type=radio] {
-      height: 2vw;
-      width: 2vw;
-      margin: 2vw 2vw;
+      height: 3vw;
+      width: 3vw;
+      margin: 3.5vw 2vw;
     }
   }
 }
@@ -251,4 +254,10 @@ input#username {
   font-size: 5vw;
   margin: 110vw auto 2vw auto;
   width: 55vw;
+}
+
+#backToHomeButton{
+  border: green solid;
+  font-size: 5.5vw;
+  background: yellowgreen;
 }
