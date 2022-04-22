@@ -59,10 +59,10 @@ const showPoster = () => {
   const context = canvas.getContext("2d");
     const imageObj = new Image();
     imageObj.onload = () => {
-      context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerHeight);
+      context.drawImage(imageObj, 0, 0, window.innerWidth, window.innerWidth * 1.77);
       context.font = "50px Verdana";
       context.fillStyle = 'white';
-      context.fillText(username, window.innerWidth * 0.11,  window.innerHeight * 0.55);
+      context.fillText(username, window.innerWidth * 0.11,  window.innerWidth * 0.97);
 
       var canvas = document.getElementById('result-canvas');
       var dataURL = canvas.toDataURL();
