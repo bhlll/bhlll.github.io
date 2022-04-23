@@ -64,7 +64,7 @@ const showPoster = () => {
     context.font = "45px sans-serif";
     context.fillStyle = 'white';
     context.textAlign = "center";
-    context.fillText(username, window.innerWidth * 0.25,  window.innerWidth * 0.98);
+    context.fillText(username, window.innerWidth * 0.26,  window.innerWidth * 0.98);
 
     var canvas = document.getElementById('result-canvas');
     var dataURL = canvas.toDataURL();
